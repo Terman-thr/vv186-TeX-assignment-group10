@@ -1,0 +1,237 @@
+\documentclass[11pt,twoside,a4paper]{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{geometry}
+\usepackage{multicol}% multi colomn
+\geometry{a4paper,left=2cm,right=2cm,top=1cm,bottom=2cm}
+\DeclareMathSizes{12}{20}{14}{10}
+\renewcommand{\baselinestretch}{1.5}
+
+%Ex3.1
+\begin{document}
+\title{Ex3 186 Fall}
+\author{Assignment group 10}
+\date{}
+\maketitle
+\section{Exercise 3.1}
+\subsection{i}
+Let $\varepsilon>0$ be fixed, we need to show that for any $\varepsilon > 0 $ we can find $\displaystyle\exists N\in \mathbb{N}^*,\forall n>N_{0},|\frac{1}{n^2}-0|<\varepsilon$ such that for all $n>N$, we have 
+$$|a_{n}-0|=| \frac{1}{n^2}-0|= \frac{1}{n^2}<\varepsilon$$
+We note that $\displaystyle \frac{1}{n^2}<\varepsilon\Leftrightarrow n>\sqrt{\frac{1}{\varepsilon}}$. Therefore, given any $\varepsilon>0$, we choose any $N\in \mathbb{N}$ with $\displaystyle N>\sqrt{\frac{1}{\varepsilon}}$ Then for all $n > N$ we have $ n > \frac{1}{\varepsilon}$ and hence
+$\frac{1}{n^2}<\varepsilon$. Thus $|a_{n}-0|=a_{n}<\varepsilon$ for all $ n > N$, so by the definition of convergence we have $\displaystyle\lim\limits_{n\to\infty}\frac{1}{n^2}=0$.
+\par\noindent
+ Proof: $\displaystyle \exists N_{0}=\left[\sqrt{\frac{1}{\varepsilon}}\right]+1$,$N_{0}\in \mathbb{N}^*$. 
+Because $\displaystyle \left[\sqrt{\frac{1}{\varepsilon}}\right]+1\ge  \sqrt{\frac{1}{\varepsilon}}$
+So that $\forall n> N_{0}$,there is :
+$$\frac{1}{n^2} < \frac{1}{(\left[\sqrt{\frac{1}{\varepsilon}}\right]+1)^2}\le \frac{1}{(\sqrt{\frac{1}{\varepsilon}})^2}=\varepsilon$$
+And we can know $\forall\varepsilon>0,\exists N_{0}\in \mathbb{N}^*,\forall n>N_{0}, \displaystyle |\frac{1}{n^2}-0|<\varepsilon$,which means $\displaystyle\lim\limits_{n\to\infty}\frac{1}{n^2}=0$.
+\par\noindent
+Let $\varepsilon>0$ be fixed,we can know that $\displaystyle\lim\limits_{n\to\infty}\frac{2n-5}{n}=2$ if and only if $\displaystyle\lim\limits_{n\to\infty}(\frac{2n-5}{n}-2)=0$,which means $\displaystyle\lim\limits_{n\to\infty}(-\frac{5}{n})=0$ is true.We know that $\displaystyle\forall\varepsilon>0,\exists N_{0}\in \mathbb{N}^*,\forall n>N_{0},|-\frac{5}{n}-0|<\varepsilon$.So we can get $\displaystyle n>\left[\frac{5}{\varepsilon} \right]+1$.\par\noindent
+Proof: $\displaystyle \exists N_{0}=\left[\frac{1}{\varepsilon}\right]+1$,$N_{0}\in \mathbb{N}^*$. So that $\forall n> N_{0}$. Because $\displaystyle \left[\frac{5}{\varepsilon}\right]+1\ge  \frac{5}{\varepsilon}$. There is :
+$$|-\frac{5}{n}-0|=|\frac{5}{n}| < \frac{5}{\left[\frac{5}{\varepsilon}\right]+1}<\frac{5}{\frac{5}{\varepsilon}}=\varepsilon$$
+Thus, $\displaystyle\lim\limits_{n\to\infty}(-\frac{5}{n})=0$ is true,and we can prove $\displaystyle\lim\limits_{n\to\infty}\frac{2n-5}{n}=2$
+
+\subsection{ii}
+Let $\varepsilon>0$ be fixed, we need to show that $ \displaystyle\lim \limits_{n\to\infty}a_{n}b_{n}=0$, we have: 
+\begin{align*}
+|a_{n}b_{n}-a b| &=\left|{an} b_{n}-a b+a_{n} b-a_{n} b\right| \\
+&\left.=\left|a_{n}\left(b_{n}-b\right)+b\right| a_{n}-a\right) \mid \\
+& \leqslant\left|a_{n}\left(b_{n}-b\right)\right|+\left|b\left(a_{n}-a\right)\right| \\
+&=\left|a_{n}\right| \cdot\left|b_{n}-b\right|+|b| \cdot\left|a_{n}-a\right|
+\end{align*}
+Because $a_{n}$ is bounded. So, let  $C_{1}:=\sup \left(a_{n}\right)$  Meanwhile,  $\lim \limits_{n\to\infty}(b_{n}-b)=0$  Thus, Let  $\displaystyle\frac{\varepsilon}{2}>0$  be fixed,
+We can find  $\displaystyle\forall \varepsilon>0,  \exists N \in \mathbb{N}, \forall n>N,|b_{n}-b|<\frac{\varepsilon}{2C_{1}}$ 
+\par\noindent
+Thus, we can know :$\displaystyle\forall \varepsilon>0, \exists N \in \mathbb{N}, \forall n>N,\left|a_{n}\right| | b_{n}-b|<\frac{\varepsilon}{2} $
+\par\noindent
+Similianly we can know :$\displaystyle\forall \varepsilon>0,  \exists N \in \mathbb{N}, \forall n>N,|b| \cdot\left|a_{n}-a\right|<\frac{\varepsilon}{2}$
+\par\noindent
+Thus. we can get  $\forall \varepsilon>0, \exists N \in \mathbb{N}, \forall n>N, \left|a_{n} b_{n}-a b\right|\leq\left|a_{n}\right|\left|b_{n}-b\right|+|b| \cdot\left|a_{n}-a\right|<\varepsilon$. So,$ \displaystyle\lim \limits_{n\to\infty}\left|a_{n} b_{n}-a b\right|=0$. And we get the proof :$ \displaystyle\lim \limits_{n\to\infty}\left|a_{n} b_{n}\right|=ab$.
+
+
+
+
+
+
+%=====================================================================
+\section{Exercise 3.2}
+\subsection{$a_{n}$}
+$\displaystyle a_{n}=\frac{n^{2}-3 n+2}{2 n^{2}+5 n+10}\left(n \in N^{*}\right) 
+\text {.  Because } n \in N^{*}, n^{2} \in N^{*} 
+\text {.  So, we can know }  a_{n}=\frac{1-\frac{3}{n}+\frac{1}{n^{2}}}{2+\frac{5}{n}+\frac{10}{n^{2}}}$
+According to 3.1(i) and slides, we have $\displaystyle\lim\limits_{n\to\infty}\frac{1}{n}=0$ and $\displaystyle\lim\limits_{n\to\infty}\frac{1}{n^2}=0$.\par
+Thus, $\displaystyle \lim\limits_{n\to\infty} (1-\frac{3}{n}+\frac{1}{n^{2}})=1$ and $\displaystyle \lim\limits_{n\to\infty} (2+\frac{5}{n}+\frac{10}{n^{2}})=2$, and we can know :
+$$\displaystyle \lim\limits_{n\to\infty} a_{n}= \lim\limits_{n\to\infty}\frac{1-\frac{3}{n}+\frac{1}{n^{2}}}{2+\frac{5}{n}+\frac{10}{n^{2}}}=\frac{\lim\limits_{n\to\infty}(1-\frac{3}{n}+\frac{1}{n^{2}})}{\lim\limits_{n\to\infty}(2+\frac{5}{n}+\frac{10}{n^{2}})}=\frac{1}{2}$$
+\subsection{$b_{n}$}
+%  ======================BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB
+We can learn by our intuition that the sequence  $\left(b_{n}\right)$  converges at 1 . Now we can prove this.
+\par\noindent
+By definition, we need to prove that
+ $\forall \varepsilon>0$, $\exists N \in \mathbb{N}$, $\forall n>N$, $\quad\left|\left(1-n^{-2}\right)^{n}-1\right|<\varepsilon $.
+\par\noindent
+It is appraent that  $$1-n^{-2}<1. $$  \text {So, the original expression can be rewritten as}
+ $$\forall \varepsilon>0, \exists N \in \mathbb{N}, \forall n=N, \quad\left| 1-\left(1-n^{-2}\right)^{n}\right|<\varepsilon$$
+\par\noindent
+Now we claim that such an  N  exists.
+\par\noindent
+We can move some elements in this expression:
+$$1-\left(1-n^{-2}\right)^{n}<\varepsilon$$
+\par\noindent
+and make it into:
+$$1-\varepsilon<\left(1-n^{-2}\right)^{n} $$
+\par\noindent
+As all ns that satisfy the inequation when  $\varepsilon<1$  also satisfies the inequation when  $\varepsilon>1$ , we take  $\varepsilon<1$  and we get:
+$$1-n^{-2}>\sqrt[n]{1-\varepsilon} $$
+So,
+$$n^{-2}<1-\sqrt[n]{1-\varepsilon}$$
+which is appraently greater than zero.
+\par\noindent
+Thus,  $n>\sqrt{1-\sqrt[n]{1-\varepsilon}}$.
+\par\noindent
+Let  $N=\sqrt{1-\sqrt[n]{1-\varepsilon}}$,  and all ns greater than  N  satisfy the expression:
+ $$\forall \epsilon>0, \exists N \in N, \forall n>N, \quad\left|1-\left(1-n^{-2}\right)^{n}\right|<\varepsilon$$
+Q. E. D.
+\subsection{$c_{n}$}
+Because $n\in \mathbb{N},  $so $n^{n} \in N^{*} ,(2 n) ! \in N^{*} $. Thus, we can know $c_{n}>0$
+\begin{align*}
+c_{n}=\frac{n^{n}}{(2 n) !} &=\frac{n}{2 n} \cdot \frac{n}{2 n-1} \cdots \frac{n}{n+1} \cdot \frac{1}{n} \frac{1}{n-1} \cdots \frac{1}{1} \\
+&<\frac{1}{n}
+\end{align*}
+So, we can know $\displaystyle0<c_{n}<\frac{1}{n}$. We have prove that $\displaystyle \lim\limits_{n\to\infty} \frac{1}{n}=0$, and we know $\lim\limits_{n\to\infty}0=0$. Thus, $\lim\limits_{n\to\infty}c_{n}=0$.
+
+\subsection{$d_{n}$}
+$\displaystyle
+\text { Because } n \in N^{*} \text { so , } n ! \in N^{*}, n^{n} \in N^{*} \text { . Thus, we can } 
+\text { know } d_{n}>0 \text { . } $\par
+Because $$ d_{n}=\frac{n !}{n^{n}}=\frac{n}{n} \cdot \frac{n-1}{n} \cdots \frac{1}{n}<\frac{1}{n} $$
+$\text { We have proved that } \lim \limits_{n\to\infty}\frac{1}{n}=0, \lim\limits_{n\to\infty} 0=0 \text { . and } 
+0<d_{n}<\frac{1}{n} \text { . Thus, } \lim \limits_{n\to\infty} d_{n}=0$.
+
+\subsection{$e_{n}$}
+Because $ \sqrt{n+1}-\sqrt{n}>0 $. So ,  $e_{n}>0 $.
+\par\noindent
+Because $\displaystyle e_{n}=\frac{1}{\sqrt{n+1}+\sqrt{n}}\quad
+ \exists N \in \mathbb{N}^{*}, \forall n>N .\left|\frac{1}{\sqrt{n+1}+\sqrt{n}}-0\right|<\varepsilon $ 
+$$\displaystyle\frac{1}{\varepsilon}<\sqrt{n+1}+\sqrt{n}<2 \sqrt{n+1} $$
+$$n>\frac{1}{4 \varepsilon^{2}}-1$$
+We note that $\displaystyle \left|\frac{1}{\sqrt{n+1}+\sqrt{n}}-0\right|<\varepsilon\Rightarrow n>\frac{1}{4 \varepsilon^{2}}-1$ Therefore, given any $\varepsilon>0$, we choose any $N\in \mathbb{N}$ with $\displaystyle N>\frac{1}{4 \varepsilon^{2}}$ Then for all $n > N$ we have $ n >\displaystyle\frac{1}{4 \varepsilon^{2}}$ and hence
+$\displaystyle \left|e_{n}-0\right|<\varepsilon$. 
+
+%=====================================================================
+\section{Exercise 3.3}
+Proof :
+$ a_{2n} \rightarrow a$  and  $a_{n+1} \rightarrow a$  implies that  $\forall \varepsilon_{1}>0, \quad \exists N_{1}$  that  for $\forall n \geqslant N_{1},\left|a_{2 n}-a\right|<\varepsilon_{1}$\par\noindent
+$ \forall \varepsilon_{2}>0,  \exists N_{2}$  that  for $\forall n_{0} \ge N_{2},\left|a_{2 n+1}-a\right|<\varepsilon_{2} $
+So, for  $\forall \varepsilon>0$ , we an find  $N_{1}$  and  $N_{2}$ .Let  $N=\max \left\{N_{1}, N_{2}\right\} $.
+Now we have for $ \forall \varepsilon>0, \exists N$  that for $\forall n_{0}=2n\ge N,  \left|a_{2 n}-a|<\varepsilon \quad\wedge\quad \right| a_{2 n+1}-a \mid<\varepsilon $
+\quad, namely for $\forall n_{0}\ge N,|a_{n_{0}}-a|<\varepsilon$.
+%======================================================================
+\section{Exercise 3.4}
+\subsection{i}
+Proof: We know that for every$ i \in$ $\mathbb{N}^{*}$ , $a_{i+1}$ can be written by  $\frac{m+2 n}{m+n}$  while  $a_{i}$  can be written by  $\frac{m}{n}$.  So, we can let the numerator and denominator divided by  n , and  $a_{i+1}=\frac{\frac{m}{n}+2}{\frac{m}{n}+1}=\frac{a_{i}+2}{a_{i}+1}=1+\frac{1}{1+a_{i}}$. 
+Then, we also know that  $m=n=1$  originally,which means $a_{1}=1$, so we have proofed.
+
+\subsection{ii}
+Proof: For every $ i\in \mathbb{N}^{*}$  and  $i \geqslant 2$ , we assume that $a_{2i-2}$ can be written by $ \frac{m}{n}$,  and then $ a_{2 i-1}=\frac{m+2 n}{m+n}$,  so $$ a_{2 i}=1+\frac{1}{1+a_{2 i-1}}=\frac{3 m+4 n}{2 m+3 n} (i)$$ Then,  $$a_{2 i}=\frac{\frac{3 m}{n}+4}{\frac{2 m}{n}+3}=\frac{3 a_{2 i-2}+4}{2 a_{2 i-2}+3}=-\frac{1}{2 a_{2 i-2}+3}+\frac{3}{2}=\frac{3}{2}-\frac{1}{4 a_{2 i-2}+6} $$
+We'll use mathematical induction bellow: Firstly $a_{2}>\sqrt{2}$.
+If $a_{2i-2}>\sqrt{2}$, which means, $\frac{1}{4 a_{2 i-2}+6}<\frac{1}{4 \sqrt{2}+6}$, $a_{2 i}>\frac{3}{2}-\frac{1}{4 \sqrt{2}+b}=\frac{3 \sqrt{2}+4}{2 \sqrt{2}+3}=\sqrt{2}$. 
+So, for every i $\in \mathbb{N}^{*}$,$\sqrt{2}<a_{2i}\le\frac{3}{2}$,which means this subsequence is bounded.
+Now we use (i),$ a_{2 i}-a_{2 i-2}=\frac{3 m+4 n}{2 m+3 n}-\frac{m}{n}=\frac{2\left(2 n^{2}-m^{2}\right)}{(2 m+3 n) n}$. Because $a_{2 i-2}=\frac{m}{n}>\sqrt{2} \quad m^{2}>2 n^{2}, \quad a_{2 i}-a_{2 i-2}<0, \quad  a_{2 i}<a_{2 i}-2, \quad $,which means this subequence is monotonic. 
+So now we have proofed that the subsequence  $\left\{a_{2n}\right\}$ is monotonic and bounded.Also, $a_{2n}->a$, here a is  $+\sqrt{2}$.
+
+\subsection{iii}
+Proof: For every i  $\in \mathbb{N}^{*}$  and  $i \geqslant 2$ , we assume that $a_{2i-3}$ can be written by $ \frac{m}{n}$,  and then $ a_{2 i-2}=\frac{m+2 n}{m+n}$,  so $$ a_{2 i-1}=1+\frac{1}{1+a_{2 i-2}}=\frac{3 m+4 n}{2 m+3 n} (ii)$$ Then,  $$a_{2 i-1}=\frac{\frac{3 m}{n}+4}{\frac{2 m}{n}+3}=\frac{3 a_{2 i-2}+4}{2 a_{2 i-2}+3}=-\frac{1}{2 a_{2 i-2}+3}+\frac{3}{2}=\frac{3}{2}-\frac{1}{4 a_{2 i-2}+6} $$
+We'll use mathematical induction bellow: Firstly $a_{1}<\sqrt{2}$.
+If $a_{2i-3}<\sqrt{2}$, which means, $\frac{1}{4 a_{2 i-2}+6}>\frac{1}{4 \sqrt{2}+6}$, $a_{2 i}<\frac{3}{2}-\frac{1}{4 \sqrt{2}+b}=\frac{3 \sqrt{2}+4}{2 \sqrt{2}+3}=\sqrt{2}$. 
+So, for every i $\in \mathbb{N}^{*}$,$\sqrt{2}>a_{2i-1}\ge1$,which means this subsequence is bounded.
+Now we use (ii),$ a_{2 i-1}-a_{2 i-3}=\frac{3 m+4 n}{2 m+3 n}-\frac{m}{n}=\frac{2\left(2 n^{2}-m^{2}\right)}{(2 m+3 n) n}$. Because $a_{2 i-2}=\frac{m}{n}<\sqrt{2} \quad m^{2}<2 n^{2}, \quad a_{2 i-1}-a_{2 i-3}>0, \quad  a_{2 i-1}>a_{2 i}-3 \quad $,which means this subequence is monotonic. 
+So now we have proofed that the subsequence  $\left\{a_{2n+1}\right\}$ is monotonic and bounded.Also, $a_{2n+1}->a$, here a is  $+\sqrt{2}$.
+Then we combine Exercise 3.4.ii and Exercise 3.3, we know that $a_{n}>-\sqrt{2}$
+So $\sqrt{2}$can be written as $a_{n}$ and here n is infinite large.And $a_{n}=1+\frac{1}{2+\frac{1}{1+a_{n-2}}}$,for n is sufficiently large, so we can write it using the recursion formula of $\left\{a_{2n+1}\right\}$ or $\left\{a_{2n}\right\}$ (They are the same) and we have: $$1+\frac{1}{2+\frac{1}{2+\ldots}}$$
+\subsection{iv}
+Proof: Similarly, we assume another sequence $\left\{c_{n}\right\}$ and $c_{1}=1, c_{n+1}=a+\frac{b}{a+c_{n}}$. And we use the same method in ii)and in iii), and we will get that $c_{n}>-\sqrt{a^2+b}$.Like we use in iii),$ \sqrt{a^{2}+b}=a+\frac{b}{2 a+\frac{b}{2 a+\ldots}}$.
+
+\section{Exercise 3.5}
+\subsection{i}
+Firstly, we can know that $y_{n}$ is decreasing (or not increasing), that
+is,  $y_{n} \geq y_{n+1} $ for any
+ $n \in N $. The reasons are as followed:
+\\ \hspace*{\fill} \\
+Given  $n \in \mathbb{N}$, $\quad y_{n}=\sup \left\{x_{m}: m \geq n\right\} $ or $ \sup \left\{x_{n}, x_{n+1}, x_{n+2}, \cdots\right\} $.
+Consider  $y_{n+1}=\sup \left\{x_{m}: m \geq n+1\right\} $ or  $\sup \left\{x_{n+1}, x_{n+2}, \cdots\right\} $:
+\par
+If $x_{n}>\sup \left\{x_{m}: m \geq n+1\right\}$ then $y_{n}=x_{n},y_{n+1}<y_{n}$.
+\par
+Else if  $x_{n} \leq \sup \left\{x_{m}: m \geq n+1\right\}$  then $ \sup  \left\{x_{m}: m \geq n\right\}=\sup \left\{x_{m}: m \geq n+1\right\}$, $ y_{n}=y_{n+1}$. 
+\par\noindent
+So, $\quad y_{n} \geqslant y_{n+1}$  is true for any
+$n \in N$.
+\\ \hspace*{\fill} \\
+Secondly, we can know that  $\left(y_{n}\right)$  is bounded. The reasons are as followed:
+\par\noindent
+Because  $\left(x_{n}\right)$  is a bounded sequence, so all its subsequences are bounded and their suprema exist. So, $(y_{n})$ is bounded.
+\\ \hspace*{\fill} \\
+Then by Theorem 2.2.24,  $\left(y_{n}\right)$  is convergent.
+\subsection{ii}
+Define: $limes$ $interior$
+$$\liminf\limits_{n\to\infty}x_{n}=\lim\limits_{n\to \infty}(\inf \left\{x_{m}: m \geq n\right\})$$
+$x_{n}$=$\frac{1}{n}$: $\limsup\limits_{n\to\infty}x_{n}=\liminf\limits_{n\to\infty}x_{n}=0$;
+\par\noindent
+$x_{n}$=$(-1)^{n}\frac{1}{n}$: $\limsup\limits_{n\to\infty}x_{n}=\liminf\limits_{n\to\infty}x_{n}=0$;
+\par\noindent
+$x_{n}$=$(-1)^{n}(1+\frac{1}{n})$: $\limsup\limits_{n\to\infty}x_{n}=1$, $\liminf\limits_{n\to\infty}x_{n}=-1$.
+\subsection{iii}
+Prove by contradiction:$\quad$if  $$\exists\left(x_{n}\right), \liminf\limits_{n \to \infty} x_{n}>\limsup\limits_{n \rightarrow \infty} x_{n} $$
+\par\noindent
+Then by definition, for $\forall$ n  that is large enough,
+$$ \inf \left\{x_{m}\right\}>\sup \left\{x_{m}\right\} \quad$$  in which  $x_{m}$  is defined as  $\left(x_{m}: m \geq n\right) $. 
+That leads to a contradiction.
+
+
+%==============================================================================================================
+\section{Exercise 3.6}
+\subsection{i}
+According to Inequality of arithmetic and geometric means, we can get $a_{1}\ge b_{1}\ge0$ (iff $a=b$ the previous equality is correct,but $a>b\ge 0$) and we can recursively know that  $a_{n}>b_{n}>0\quad(a_{n},b_{n}\in \mathbb{R})$. Because $\displaystyle a_{n+1}=\frac{a_{n}+b_{n}}{2}$ and $\displaystyle b_{n+1}=\sqrt{a_{n}b_{n}}$ . So , we can know the two numbers lay between the interval of $(b_{n},a_{n})$, so we can know $a_{n+1}<a_{n}$ and $b_{n+1}>b_{n}$, that is $a_{n}>a_{n+1}>b_{n+1}>b_{n}$. Recursivly, we can know the inequilty :
+$$a>a_{1}>a_{2}> ... >a_{n},\quad \quad b<b_{1}<b_{2}< ... <b_{n}\quad n=1,2,3...$$
+So, we can know  $a_{1}$ is decreasing and $b_{1}$ is increasing.
+\par\noindent
+Because  $a_{n+1}$ and $b_{n+1}$ lay between the interval of $(b_{n},a_{n})$ and $(b_{n},a_{n}) \subset (b_{1},a_{1})$. Thus, we can know $a_{n+1},b_{n+1}\in (b_{1},a_{1})$, which means sequence $a_{n},b_{n}$ is bounded. So they converge, which means $\lim a_{n}$ and  $\lim b_{n}$ exist.
+\par\noindent
+Because $\displaystyle a_{n+1}=\frac{a_{n}+b_{n}}{2}$ , $\displaystyle b_{n+1}=\sqrt{a_{n}b_{n}}$ and  $a_{n}>a_{n+1}>b_{n+1}>b_{n}$, we can know $b_{n+1}$ lay between $a_{n+1}$ and $b_{n}$. And because $\displaystyle a_{n+1}-b_{n}=\frac{a_{n}-b_{n}}{2}$. So, we can get $\displaystyle |a_{n+1}-b_{n+1}|< \frac{|a_{n}-b_{n}|}{2}$.
+\par\noindent
+Let $\displaystyle t=\frac{a+b}{2}$, $\displaystyle |a_{n+1}-b_{n+1}|< (\frac{1}{2})^{n}|a-b|$.  And $\displaystyle\forall\varepsilon>0,| |a_{n+1}-b_{n+1}|-0|< (\frac{1}{2})^{n}|a-b|<\varepsilon$, we can know $\displaystyle n>\left[log_{\frac{1}{2}}{\frac{\varepsilon}{|a-b|}} \right]+1$. Thus, $\displaystyle\forall\varepsilon>0,\exists N=\left[log_{\frac{1}{2}}{\frac{\varepsilon}{|a-b|}} \right]+1, N\in \mathbb{N}^*,\forall n>N_{0},| |a_{n+1}-b_{n+1}|-0|<\varepsilon$. So,we can know $|a_{n+1}-b_{n+1}|$ converge to 0, which means $\lim a_{n}=\lim b_{n}$.
+
+
+\subsection{ii}
+We know that $\displaystyle a_{n+1}=\frac{a_{n}+b_{n}}{2}, \quad b_{n+1}=\frac{2}{\frac{1}{a_{n}}+\frac{1}{b_{n}}} $. Because $a_{1}\ge b_{1}\ge 0$ and similiarly $a_{n}>b_{n}>0\quad(a_{n},b_{n}\in \mathbb{R})$,  And we can get :
+\begin{align*}
+a_{n+1}-b_{n+1}&=\frac{a_{n}+b_{n}}{2}-\frac{2 a_{n} b_{n}}{a_{n}+b_{n}} \\
+&=\frac{a_{n}^{2}+b_{n}^{2}-2 a_{n} b_{n}}{2\left(a_{n}+b_{n}\right)} \\
+&=\frac{\left(a_{n}-b_{n}\right)^{2}}{2\left(a_{n}+b_{n}\right)} \\
+&>0
+\end{align*}
+Thus, we can also get the same result as (i):
+$$a>a_{1}>a_{2}> ... >a_{n},\quad \quad b<b_{1}<b_{2}< ... <b_{n}\quad n=1,2,3...$$
+Because $\displaystyle a_{n+1}=\frac{a_{n}+b_{n}}{2}$ , $\displaystyle b_{n+1}=\frac{2}{\frac{1}{a_{n}}+\frac{1}{b_{n}}} $ and  $a_{n}>a_{n+1}>b_{n+1}>b_{n}$, we can know $b_{n+1}$ lay between $a_{n+1}$ and $b_{n}$.
+Because  $a_{n+1}$ and $b_{n+1}$ lay between the interval of $(b_{n},a_{n})$ and $(b_{n},a_{n}) \subset (b_{1},a_{1})$. Thus, we can know $a_{n+1},b_{n+1}\in (b_{1},a_{1})$, which means sequence $a_{n},b_{n}$ is bounded. So they converge, which means $\lim a_{n}$ and  $\lim b_{n}$ exist.
+\par\noindent
+ And because $\displaystyle a_{n+1}-b_{n}=\frac{a_{n}-b_{n}}{2}$. So, we can get $\displaystyle |a_{n+1}-b_{n+1}|< \frac{|a_{n}-b_{n}|}{2}$.
+\par\noindent
+Let $\displaystyle t=\frac{a+b}{2}$, $\displaystyle |a_{n+1}-b_{n+1}|< (\frac{1}{2})^{n}|a-b|$.  And $\displaystyle\forall\varepsilon>0,| |a_{n+1}-b_{n+1}|-0|< (\frac{1}{2})^{n}|a-b|<\varepsilon$, we can know $\displaystyle n>\left[log_{\frac{1}{2}}{\frac{\varepsilon}{|a-b|}} \right]+1$. Thus, $\displaystyle\forall\varepsilon>0,\exists N=\left[log_{\frac{1}{2}}{\frac{\varepsilon}{|a-b|}} \right]+1, N\in \mathbb{N}^*,\forall n>N_{0},| |a_{n+1}-b_{n+1}|-0|<\varepsilon$. So, $|a_{n+1}-b_{n+1}|$ converge to 0, which means $\lim a_{n}=\displaystyle\lim\limits_{n\to\infty}a_{n},\lim b_{n}=\lim\limits_{n\to\infty}b_{n},\lim a_{n}=\lim b_{n}$.
+\par\noindent
+Meanwhile, we find that $\displaystyle a_{1}b_{1}=a_{2}b_{2}=...=a_{n}b_{n}=ab$, which means $\displaystyle\lim\limits_{n\to\infty}a_{n}b_{n}=ab$.
+Thus, ths limit is $\sqrt{ab}$.
+
+
+
+
+
+
+
+
+
+
+
+\end{document}
+
+
