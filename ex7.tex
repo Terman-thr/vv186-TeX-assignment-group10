@@ -46,16 +46,14 @@ Because
     \begin{aligned}
         \displaystyle \sum _{n \in \mathbb{N}^* \backslash X} \frac{1}{n} &=
         \frac{1}{9}+\frac{1}{81}+\dots+\frac{1}{9^k}+\dots\\
-        &=\frac{\frac{1}{9}}{1-\frac{1}{9}}\\
-        &=\frac{1}{8}
+        &=\frac{1}{9}\sum \frac{1}{n}
     \end{aligned}
     \end{equation}
-So, $\displaystyle \sum _{n \in \mathbb{N}^* \backslash X} \frac{1}{n}$ converges.
+So, $\displaystyle \sum _{n \in \mathbb{N}^* \backslash X} \frac{1}{n}$ diverges.
 \newline
-We suppose that $\displaystyle\sum _{n\in X} \frac{1}{n} $converges.
-Based on that, we can know $\displaystyle \sum \frac{1}{n}= \sum _{n\in X} \frac{1}{n} +\sum _{n \in \mathbb{N}^* \backslash X} \frac{1}{n}$
-also converges, which is contridict with the fact that  $\displaystyle \sum \frac{1}{n}$ diverges.
-So, $\displaystyle\sum _{n\in X} \frac{1}{n} $ diverges.
+Then, we can find that $\displaystyle\sum _{n\in X} \frac{1}{n}=\frac{8}{9}\sum \frac{1}{n}$
+So, $\displaystyle \sum _{n \in X} \frac{1}{n}$ also diverges.
+
 
 \section{Ex7.6}
 \begin{figure}[H]
@@ -158,6 +156,45 @@ $$\displaystyle \lim_{x \to \infty} \frac{a_{n+1}}{a_{n}}
 Thus, $\displaystyle a_{n}=\frac{2^n}{n^n}$ converges.
 
 \subsection{7.7.6}
+We can know from 
 $\displaystyle \sum_{n = 1}^{\infty} \frac{n}{10n^3-100} $
+that when $n>4$, $\displaystyle \sum_{n = 1}^{\infty} \frac{n}{10n^3-100}>0 $
+\newline
+And then, we will prove that when $n>4$, $\displaystyle \frac{n}{10n^3-100}>0 $
+strictly decreases.
+\par
+Proof:\newline
+For $\forall n>4$ , 
+\begin{equation}
+    \begin{aligned}
+        \frac{n+1}{10(n+1)^3-100}-\frac{n}{10n^3-100}
+        &=\frac{1}{10}(\frac{n+1}{(n+1)^3-10}-\frac{1}{10}(\frac{n}{n^3-10}) \\
+        &=\frac{1}{10}\cdot\frac{-2n^3-3n^2-n-10}{[(n+1)^3-10](n^3-10)}<0
+    \end{aligned}
+    \end{equation}
+Thus, $\displaystyle \frac{n}{10n^3-100}>0 $ strictly decreases.\newline
+Then, we will prove $a_{n}:=\sum_{n = 1}^{k}\displaystyle \frac{n}{10n^3-100}$ is Cauchy squence.
+\par
+Proof:\newline
+For all $n>4$ and fixed $p$, 
+\begin{equation}
+    \begin{aligned}
+        \sum_{n = 1}^{k+p} \frac{n}{10n^3-100}-\sum_{n = 1}^{k} \frac{n}{10n^3-100}
+        =\sum_{n = k+1}^{k+p} \frac{n}{10n^3-100}
+    \end{aligned}
+    \end{equation}
 
-\end{document}}
+Because 
+\begin{equation}
+    \begin{aligned}
+        \left|\sum_{n = k+1}^{k+p} \frac{n}{10n^3-100}-\sum_{n = k+2}^{k+p+1} \frac{n}{10n^3-100}\right|
+        &=\frac{k+p+1}{10(k+p+1)^3-100}-\frac{k+1}{10(k+1)^3-100} \\
+        &<\frac{p}{10(k+1)^3-100}
+    \end{aligned}
+    \end{equation}
+    We can know that $\displaystyle \lim_{k \to \infty} \frac{p}{10(k+1)^3-100} =0$. So 
+    $\forall \varepsilon>0,\exists k \in \mathbb{N}^*$, there exists $\varepsilon$ that satisfies
+    $$\left|\sum_{n = 1}^{k+p} \frac{n}{10n^3-100}-\sum_{n = 1}^{k} \frac{n}{10n^3-100}\right|<\varepsilon$$
+    We have prove $a_{n}:=\sum_{n = 1}^{k} \displaystyle \frac{n}{10n^3-100}$ is Cauchy squence.
+    And then we can know $\displaystyle \sum_{n = 1}^{\infty} \frac{n}{10n^3-100} $ converges.
+\end{document}
