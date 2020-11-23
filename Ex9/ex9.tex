@@ -1,0 +1,93 @@
+\documentclass[11pt,twoside,a4paper]{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{geometry}
+\usepackage{multicol}% multi colomn
+\usepackage{graphicx}
+\usepackage{float}
+\geometry{a4paper,left=2cm,right=2cm,top=1cm,bottom=2cm}
+\DeclareMathSizes{12}{20}{14}{10}
+\begin{document}
+\title{Ex9 186 Fall}
+\author{Assignment group 10}
+\date{}
+\maketitle
+\section{Exercise 9.1}
+\subsection{i}
+First, we use the l'Hopital's rule:
+$$ \lim_{x \to \infty} \frac{e^x-e^{-x}}{e^x+e^{-x}}
+=\lim_{x \to \infty} \frac{e^x+e^{-x}}{e^x-e^{-x}} $$
+but we cannot prove that 
+$\displaystyle \lim_{x \to \infty} \frac{e^x+e^{-x}}{e^x-e^{-x}}$
+and $\displaystyle \lim_{x \to \infty} \frac{e^x-e^{-x}}{e^x+e^{-x}}$
+necessaily exist by just using l'Hopital's rule.
+\newline
+Another approach:
+\par
+Because $e^{-x}>0 $ is always true. So we have 
+$$\lim_{x \to \infty} \frac{e^x-e^{-x}}{e^x+e^{-x}}
+=\lim_{x \to \infty} \frac{e^{2x}-1}{e^{2x}+1}=1 $$
+
+\subsection{ii}
+First, we use the l'Hopital's rule:
+$$ \lim_{x \to 0} \frac{x^2\cos (\frac{1}{x})}{\sin x} 
+=\lim_{x \to 0} \frac{2x\cos (\frac{1}{x})+\sin (\frac{1}{x}) }{\cos x} $$
+However, denominator $\cos x$ does not converge to $0$ or $+\infty$.
+So, l'Hopital's rule cannot be used.
+\newline
+Another approach:
+\par
+$$ \lim_{x \to 0} \frac{x^2\cos (\frac{1}{x})}{\sin x} 
+=\lim_{x \to 0} (\frac{x}{\sin x})\cdot \lim_{x \to 0} (x\cos(\frac{1}{x}))=1\times 0=0$$
+
+\subsection{iii}
+\begin{equation}
+    \begin{aligned}
+        \lim_{x \to \infty} \frac{f'(x)}{g'(x)}
+        &= \lim_{x \to \infty} \frac{1+\cos ^2x-\sin ^2 x}{ e^{\sin x}\cos xf(x)+f'(x)e^{\sin x}} \\
+        &=\lim_{x \to \infty}  \frac{2\cos x}{ e^{\sin x}(x+\sin x\cos x +2\cos x)}
+    \end{aligned}
+    \end{equation}
+Because $\displaystyle \lim_{x \to \infty} e^{\sin x}(x+\sin x\cos x +2\cos x)
+=\lim_{x \to \infty} (e^{\sin x}x+e^{\sin x} (\sin x\cos x +2\cos x))$,
+ and $e^{\sin x} \ge e^{-1}$. Thus, 
+ $\displaystyle \lim_{x \to \infty} (e^{\sin x}x+e^{\sin x} (\sin x\cos x +2\cos x))=\infty$.
+ \newline
+So $\displaystyle \lim_{x \to \infty} \frac{f'(x)}{g'(x)}=0$
+\newline
+Firstly, 
+$$\lim_{x \to \infty} \frac{f(x)}{g(x)}
+=\lim_{x \to \infty} \frac{f(x)}{f(x)e^{\sin x}}  $$
+Because when $x\rightarrow \infty, f(x)\neq 0$,
+So, 
+$\displaystyle \lim_{x \to \infty} \frac{f(x)}{g(x)}
+= \lim_{x \to \infty} e^{-\sin x} $.
+ Because $\displaystyle \lim_{x \to \infty} e^{-\sin x}$ does not exist.
+ Thus, $\displaystyle \lim_{x \to \infty} \frac{f(x)}{g(x)}$ does not exist.
+And this doesn't contradict with l'Hopital's rule.
+
+\section{Exercise 9.2}
+\subsection{i}
+The function we find is $$f(x)=\sin (x^2) \quad x\in \mathbb{R} $$
+We can know that $\displaystyle\sup_{x\in \mathbb{R}} |f(x)|=|\sin (x^2)|=1$, 
+and $$\sup_{x\in \mathbb{R}} |f'(x)|=\sup_{x\in \mathbb{R}} |x^2\cdot\cos (x^2)|
+=\infty \quad \text{as } x \rightarrow \infty$$
+
+\subsection{ii}
+The function we find is 
+$$f(x)=\ln (x) \quad x\in \mathbb{R} $$
+We can know that $\displaystyle\sup_{x\in \mathbb{R}} |f(x)|=|\ln (x)|=\infty$, and
+$$\sup_{x\in \mathbb{R}} |f'(x)|=\sup_{x\in \mathbb{R}} |\frac{1}{x}|
+=0 \quad \text{as } x \rightarrow \infty$$
+
+
+
+
+
+
+
+
+
+
+
+\end{document}
