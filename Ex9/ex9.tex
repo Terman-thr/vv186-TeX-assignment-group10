@@ -1,0 +1,297 @@
+\documentclass[11pt,twoside,a4paper]{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{geometry}
+\usepackage{multicol}% multi colomn
+\usepackage{graphicx}
+\usepackage{float}
+\geometry{a4paper,left=2cm,right=2cm,top=1cm,bottom=2cm}
+\DeclareMathSizes{12}{20}{14}{10}
+\begin{document}
+\title{Ex9 186 Fall}
+\author{Assignment group 10}
+\date{}
+\maketitle
+\section{Exercise 9.1}
+\subsection{i}
+First, we use the l'Hopital's rule:
+$$ \lim_{x \to \infty} \frac{e^x-e^{-x}}{e^x+e^{-x}}
+    =\lim_{x \to \infty} \frac{e^x+e^{-x}}{e^x-e^{-x}} $$
+but we cannot prove that
+$\displaystyle \lim_{x \to \infty} \frac{e^x+e^{-x}}{e^x-e^{-x}}$
+and $\displaystyle \lim_{x \to \infty} \frac{e^x-e^{-x}}{e^x+e^{-x}}$
+necessaily exist by just using l'Hopital's rule.
+\newline
+Another approach:
+\par
+Because $e^{-x}>0 $ is always true. So we have
+$$\lim_{x \to \infty} \frac{e^x-e^{-x}}{e^x+e^{-x}}
+    =\lim_{x \to \infty} \frac{e^{2x}-1}{e^{2x}+1}=1 $$
+
+\subsection{ii}
+First, we use the l'Hopital's rule:
+$$ \lim_{x \to 0} \frac{x^2\cos (\frac{1}{x})}{\sin x}
+    =\lim_{x \to 0} \frac{2x\cos (\frac{1}{x})+\sin (\frac{1}{x}) }{\cos x} $$
+However, denominator $\cos x$ does not converge to $0$ or $+\infty$.
+So, l'Hopital's rule cannot be used.
+\newline
+Another approach:
+\par
+$$ \lim_{x \to 0} \frac{x^2\cos (\frac{1}{x})}{\sin x}
+    =\lim_{x \to 0} (\frac{x}{\sin x})\cdot \lim_{x \to 0} (x\cos(\frac{1}{x}))=1\times 0=0$$
+
+\subsection{iii}
+\begin{equation}
+    \begin{aligned}
+        \lim_{x \to \infty} \frac{f'(x)}{g'(x)}
+         & = \lim_{x \to \infty} \frac{1+\cos ^2x-\sin ^2 x}{ e^{\sin x}\cos xf(x)+f'(x)e^{\sin x}} \\
+         & =\lim_{x \to \infty}  \frac{2\cos x}{ e^{\sin x}(x+\sin x\cos x +2\cos x)}
+    \end{aligned}
+\end{equation}
+Because $\displaystyle \lim_{x \to \infty} e^{\sin x}(x+\sin x\cos x +2\cos x)
+    =\lim_{x \to \infty} (e^{\sin x}x+e^{\sin x} (\sin x\cos x +2\cos x))$,
+and $e^{\sin x} \ge e^{-1}$. Thus,
+$\displaystyle \lim_{x \to \infty} (e^{\sin x}x+e^{\sin x} (\sin x\cos x +2\cos x))=\infty$.
+\newline
+So $\displaystyle \lim_{x \to \infty} \frac{f'(x)}{g'(x)}=0$
+\newline
+Firstly,
+$$\lim_{x \to \infty} \frac{f(x)}{g(x)}
+    =\lim_{x \to \infty} \frac{f(x)}{f(x)e^{\sin x}}  $$
+Because when $x\rightarrow \infty, f(x)\neq 0$,
+So,
+$\displaystyle \lim_{x \to \infty} \frac{f(x)}{g(x)}
+    = \lim_{x \to \infty} e^{-\sin x} $.
+Because $\displaystyle \lim_{x \to \infty} e^{-\sin x}$ does not exist.
+Thus, $\displaystyle \lim_{x \to \infty} \frac{f(x)}{g(x)}$ does not exist.
+And this doesn't contradict with l'Hopital's rule.
+
+\section{Exercise 9.2}
+\subsection{i}
+The function we find is $$f(x)=\sin (x^2) \quad x\in \mathbb{R} $$
+We can know that $\displaystyle\sup_{x\in \mathbb{R}} |f(x)|=|\sin (x^2)|=1$,
+and $$\sup_{x\in \mathbb{R}} |f'(x)|=\sup_{x\in \mathbb{R}} |x^2\cdot\cos (x^2)|
+    =\infty \quad \text{as } x \rightarrow \infty$$
+
+\subsection{ii}
+The function we find is
+$$f(x)=\ln (x) \quad x\in \mathbb{R} $$
+We can know that $\displaystyle\sup_{x\in \mathbb{R}} |f(x)|=|\ln (x)|=\infty$, and
+$$\sup_{x\in \mathbb{R}} |f'(x)|=\sup_{x\in \mathbb{R}} |\frac{1}{x}|
+    =0 \quad \text{as } x \rightarrow \infty$$
+\section{Exercise 9.3}
+\subsection{i}
+Prove:
+$$
+	\min _{1 \leq i \leq n} x_{i} = \sum_{i=1}^{n} \lambda_{i} \min _{1 \leq i \leq n} x_{i} \leq  \sum_{i=1}^{n} \lambda_{i} x_{i} \leq \sum_{i=1}^{n} \lambda_{i} \max _{1 \leq i \leq n} x_{i} = \max _{1 \leq i \leq n} x_{i}  
+$$
+\subsection{ii}
+Prove:
+$$
+\min _{1 \leq i \leq n} x_{i} \leq \min _{1 \leq i \leq n-1} x_{i} = \frac{1}{t}  \sum_{i=1}^{n-1} \lambda_{i} \min _{1 \leq i \leq n-1} x_{i} \leq \frac{1}{t} \sum_{i=1}^{n-1} \lambda_{i} x_{i} \leq \frac{1}{t}  \sum_{i=1}^{n-1} \lambda_{i} \max _{1 \leq i \leq n-1} x_{i} = \max _{1 \leq i \leq n-1} x_{i} \leq \max _{1 \leq i \leq n} x_{i}
+$$
+\subsection{iii}
+Prove:
+
+Note that: $$ f\left(\sum_{i=1}^{n} \lambda_{i} x_{i}\right) = f\left(\lambda_{n} x_{n} + \sum_{i=1}^{n-1} \lambda_{i} x_{i} \right) = f\left(\lambda_{n} x_{n} + (1-\lambda_{n}) \sum_{i=1}^{n-1} \frac{\lambda_{i}}{1-\lambda_{n}} x_{i} \right) 
+$$
+(according to Ex6.4 i) since $\frac{1}{t} \sum_{i=1}^{n-1} \frac{\lambda_{i}}{1-\lambda_{n}} x_{i} \in$ I ) 
+$$
+\leq \lambda_{n}f\left(x_{n}) + (1-\lambda{n}\right) f\left(\sum_{i=1}^{n-1} \frac{\lambda_{i}}{1-\lambda_{n}} x_{i}\right)
+$$
+Then use mathematic induction:
+
+1) When n=2, it is the same as Ex 6.4 
+
+2) We assume that when n=k it is correct, which means that,
+$$
+f\left(\sum_{i=1}^{k} \lambda_{i} x_{i}\right) \leq \sum_{i=1}^{k} \lambda_{i} f\left(x_{i}\right)
+$$
+then,
+$$
+f\left(\sum_{i=1}^{k+1} \lambda_{i} x_{i}\right) \leq \lambda_{k+1}f\left(x_{k+1}\right) + (1-\lambda_{k+1}) f\left(\sum_{i=1}^{k} \frac{\lambda_{i}}{1-\lambda_{k+1}} x_{i}\right) \leq \lambda_{k+1} f\left(x_{k+1}\right) + (1-\lambda_{k+1}) \sum_{i=1}^{k} \frac{\lambda_{i}}{1-\lambda_{k+1}} f\left(x_{i}\right) = \sum_{i=1}^{k+1} \lambda_{i} f\left(x_{i}\right)
+$$
+Then we can conclude that 
+$$
+f\left(\sum_{i=1}^{n} \lambda_{i} x_{i}\right) \leq \sum_{i=1}^{n} \lambda_{i} f\left(x_{i}\right)
+$$
+\subsection{iv}
+We know that the function $f\left(x\right) := -ln(x)$ is a convex function.So,
+$$
+-ln\left(\sum_{i=1}^{n} \lambda_{i}x_{i}\right) = f\left(\sum_{i=1}^{n} \lambda_{i}x_{i}\right) \leq  \sum_{i=1}^{n} \lambda_{i} f\left(x_{i}\right) = - \sum_{i=1}^{n} \lambda_{i} ln\left(x_{i}\right)
+$$
+$$
+ln\left(\Pi_{i=1}^{n} x_{i}^{\lambda_{i}}\right)=\sum_{i=1}^{n} \lambda_{i} ln\left(x_{i}\right) \leq ln\left(\sum_{i=1}^{n} \lambda_{i}x_{i}\right)
+$$
+Thus,
+$$
+\Pi_{i=1}^{n} x_{i}^{\lambda_{i}} \leq \sum_{i=1}^{n} \lambda_{i}x_{i}
+$$
+
+
+\section{Exercise 9.4}
+$f(x)=\begin{cases}x^4\sin^2 (x)&x\neq 0\\0&x=0\end{cases}$ . 
+\newline
+It's apparent that for $\forall x\neq 0$, $f(x)\geq 0$. Because $f(0)=0$, then according to the definition of minimum points, 0 is a local minimum point of $f$.
+\newline\newline
+Now,\begin{align*}f'(x)&=\begin{cases}4x^3 \sin^2 (\frac{1}{x})+x^4\cdot (-1)\frac{1}{x^2}\cdot 2\sin\frac{1}{x}\cos\frac{1}{x}&x\neq 0\\f'(0)&x=0\end{cases}\\&=\begin{cases}4x^3\sin^2 (\frac{1}{x})-2x^2\sin\frac{1}{x}\cos\frac{1}{x}&x\neq 0\\f'(0)&x=0\end{cases}\end{align*}
+As $f(0+h)=f(h)=0+f(h)\leq 0+h^4=0+$o$(h)$ as $h\rightarrow 0$, so $f'(0)=0$.
+\newline\newline
+Finally, $f'(0+h)=f'(h)=0+f'(h)\leq 0+4x^3 -2x^2 =0+$o$(h)$ as $x\rightarrow 0$, so $f''(0)=0$.
+\section{Exercise 9.5}
+\subsection{9.5.1}
+Because $z^7=3+4i$, so $|z|^7=5$ and we can know $|z|=\sqrt[7]{5}:=a $
+Then, we assume that\newline
+$z=a\cos \theta +a i \sin \theta $, $\theta $ is a fixed number that lays in
+the interval of $[0,2\pi)$. So we can have the equation :
+$$7\theta =\arcsin (\frac{4}{5})+2k\pi \quad k\in \mathbb{N}$$
+$$\theta =\frac{\arcsin (\frac{4}{5})+2k\pi}{7} \quad k\in \mathbb{N}$$
+We can know there are $k=0,1,2,3,4,5,6$ that can make the equation
+correct.
+
+So, we can get the answer: 
+\newline
+$\displaystyle z=\sqrt[7]{5}\cos \frac{\arcsin (\frac{4}{5})}{7} +\sqrt[7]{5} i \sin \frac{\arcsin (\frac{4}{5})}{7}\quad\quad\quad\quad\quad\quad$or 
+$\displaystyle z=\sqrt[7]{5}\cos \frac{\arcsin (\frac{4}{5})+\pi}{7} +\sqrt[7]{5} i \sin \frac{\arcsin (\frac{4}{5})+\pi}{7}$\newline
+or 
+$\displaystyle z=\sqrt[7]{5}\cos \frac{\arcsin (\frac{4}{5})+2\pi}{7} +\sqrt[7]{5} i \sin \frac{\arcsin (\frac{4}{5})+2\pi}{7}$
+or 
+$\displaystyle z=\sqrt[7]{5}\cos \frac{\arcsin (\frac{4}{5})+3\pi}{7} +\sqrt[7]{5} i \sin \frac{\arcsin (\frac{4}{5})+3\pi}{7}$\newline
+or 
+$\displaystyle z=\sqrt[7]{5}\cos \frac{\arcsin (\frac{4}{5})+4\pi}{7} +\sqrt[7]{5} i \sin \frac{\arcsin (\frac{4}{5})+4\pi}{7}$
+or 
+$\displaystyle z=\sqrt[7]{5}\cos \frac{\arcsin (\frac{4}{5})+5\pi}{7} +\sqrt[7]{5} i \sin \frac{\arcsin (\frac{4}{5})+5\pi}{7}$\newline
+or 
+$\displaystyle z=\sqrt[7]{5}\cos \frac{\arcsin (\frac{4}{5})+6\pi}{7} +\sqrt[7]{5} i \sin \frac{\arcsin (\frac{4}{5})+6\pi}{7}$ .
+\subsection{9.5.2}
+Assume that $z=:a+bi\quad a,b\in \mathbb{R}$, we can substitute it into
+the equation and we get 
+$$(a^2-b^2+b+1)+(2ab-a)i=0$$
+Then, we know :
+$$
+\begin{cases}
+    a^2-b^2+b+1=0\\
+    2ab-a=0
+\end{cases}
+$$
+1.When $a=0$, we can also know $b^2-b-1$ and thus $\displaystyle
+b=\frac{1\pm \sqrt{5}}{2}$.
+\newline
+2.When $a\neq 0$, we can also know $\displaystyle b=\frac{1}{2}$, we can thus get
+ $\displaystyle a^2+\frac{5}{4}=0$, which contradicts with $a \in \mathbb{R}$
+\newline
+$$z=\frac{1+\sqrt{5}}{2} i\quad \text{or} \quad z=\frac{1-\sqrt{5}}{2}i$$
+
+\subsection{9.5.3}
+We assume $z^2=:x+yi\quad (x,y\in \mathbb{C})$ and $z=:a+bi\quad (a,b\in \mathbb{R})$
+\begin{equation}
+    \begin{aligned}
+        (z^2)^2+z^2+1&=0\\
+        z^2=-\frac{1}{2}\pm \frac{\sqrt{3}}{2}i
+    \end{aligned}
+\end{equation}
+$z^2=(a^2-b^2)+2abi$, so we can know:
+$$
+\begin{cases}
+    a^2-b^2=-\frac{1}{2}\\
+    ab=\pm \frac{\sqrt{3}}{4}
+\end{cases}
+$$
+We can know $\displaystyle a=\pm\frac{\sqrt{3}}{4b}$ and substitute it into the 
+equation set. We can know 
+$
+\begin{cases}
+    \displaystyle
+    a=\frac{1}{2}\\
+    \displaystyle
+    b=\frac{\sqrt{3}}{2}
+\end{cases}
+$
+and 
+$
+\begin{cases}
+    \displaystyle
+    a=-\frac{1}{2}\\
+    \displaystyle
+    b=-\frac{\sqrt{3}}{2}
+\end{cases}
+$
+
+\subsection{9.5.4}
+$$
+\begin{cases}
+    iz-(1+i)w=3\\
+    (2+i)z+iw=4
+\end{cases}
+$$
+We can get:
+$$
+\begin{cases}
+    -z-i(1+i)w=3i\\
+    (1+i)(2+i)z+i(1+i)w=4
+\end{cases}
+$$
+We can solve the equation set and get the solution:
+$
+\begin{cases}
+    \displaystyle
+    z=\frac{7}{3}-\frac{4}{3}i\\
+    \displaystyle
+    w=\frac{1}{3}+2i
+\end{cases}
+$
+
+\section{9.6}
+\subsection{9.6.1}
+\begin{equation}
+    \begin{aligned}
+    \tan (x+y)&=\frac{\sin (x+y)}{\cos (x+y)} \\
+        &=  \frac{\sin x \cos y+\sin y \cos x}{\cos x \cos y-\sin x\sin y} 
+        \quad\text{(divide numerator and denominator by $\cos x \cos y$)}\\
+        &=\frac{\tan x+\tan y}{1-\tan x\tan y}
+    \end{aligned}
+\end{equation}
+Because $\cos (x+y) \neq 0$ and $\tan (x+y)$ exists. Thus, we can get 
+$\displaystyle x+y\neq \frac{\pi}{2}+k\pi\quad (k\in \mathbb{Z})$
+
+\subsection{9.6.2}
+$$\arctan x+\arctan y=\arctan (\frac{x+y}{1-xy})$$
+Assume $\displaystyle x:=\tan \alpha ,y:=\tan \beta 
+\quad (\alpha ,\beta \in (-\frac{\pi}{2},\frac{\pi}{2}),x,y\in \mathbb{R},x\cdot y \neq1)$, 
+Thus, we can get 
+$$
+\arctan (\tan \alpha )+\arctan (\tan \beta )
+-\arctan (\frac{\tan \alpha +\tan \beta }{1- \tan \alpha \tan \beta })
+=\alpha +\beta -\arctan (\tan (\alpha +\beta ))=0
+$$
+So, we get the proof.
+
+\subsection{9.6.3}
+We first establish that:
+$$
+\frac{d}{dx}(\arctan x+ \arctan \frac{1}{x})=\frac{1}{x^2+1}-\frac{1}{x^2}\cdot\frac{1}{1+(\frac{1}{x})^2}=0
+$$
+Thus, $\forall x \in \mathbb{R}$, for some $c \in \mathbb{R}$
+$$
+\arctan x +\arctan\frac{1}{x}=c
+$$
+Then, $\forall x\in \mathbb{R}$, 
+since $\displaystyle \arctan 1=\frac{\pi}{4}$, we see that
+$$
+\arctan x+ \arctan \frac{1}{x}=\arctan 1+ \arctan 1=\frac{\pi}{4}+\frac{\pi}{4}=\frac{\pi}{2}
+$$
+\section{Exercise 9.7}
+\subsection{9.7.1}
+First, we would show that if $f$ is continuous at $a\in\mathbb{R}$ and $f(a)>0$, then $f>0$ on some $B_\epsilon (a)$. According to the definition of continuity:
+$$\underset{\epsilon >0}{\forall}\,\underset{\delta >0}{\exists}\,\underset{x\in\text{dom}f}{\forall} \; |x-a|<\delta\Rightarrow|f(x)-f(a)|<\epsilon$$
+Let $f(a)=\epsilon >0$ and $B_\epsilon (a)=(a-\frac{\epsilon}{2},a+\frac{\epsilon}{2})$ and that proves the lemma.\newline\newline
+Now, because $f'(x)>0$, according to the lemma, $f'(x)>0$ on some $B_\epsilon (x)$, so on some $B_\epsilon (x)$, $f(x)$ is increasing.
+\subsection{9.7.2}
+Because the function, $f(x)=\alpha x+x^2\sin(\frac{1}{x})$ is an odd function, an "arbitrary interval containing 0" can be reduced to an "arbitrary interval $\left[0,x\right)$, where $x>0$".\newline
+We can know that$$f'(x)=\alpha +2x\sin(\frac{1}{x})-\cos(\frac{1}{x})$$and as $x\rightarrow 0$, the limit $\lim\limits_{x\rightarrow 0}f'(x)$ does not exist, because though $\alpha$ is a constant and $\lim\limits_{x\rightarrow 0}2x\sin(\frac{1}{x})$ converges to $0$, $\cos(\frac{1}{x})$ is "fluctuating" between $0$ and $1$ near 0.\newline\newline
+Now select an arbitrary $x_1\in\mathbb{R}^+$. Because $\frac{1}{x}\rightarrow +\infty$ as $x\rightarrow 0$, we can select an $x_1$ such that $\frac{1}{x}$ is an integral multiple of $2\pi$. Similarily, we can select an $x_2$ such that $\frac{1}{x}$ is an integral multiple of $-2\pi$.\newline\newline
+Because $\alpha\in\left(0\right)$, we can have $x_1$ such that $f'(x_1 )>0$ and $x_2$ such that $f'(x_2 )<0$.
+
+
+
+\end{document}
